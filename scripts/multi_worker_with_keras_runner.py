@@ -1,3 +1,5 @@
+#I just modified this
+
 import sys
 import os
 import threading
@@ -18,7 +20,7 @@ for i, node in enumerate(nodes):
     print(node)
     command = 'ssh '+node+" 'conda activate wmlce-ea;"+config+";python multi_worker_with_keras_numpyArrays.py'"
     print(command)
-    
+
     def thread_function(command):
         os.system(command)
 
@@ -27,4 +29,3 @@ for i, node in enumerate(nodes):
 
     thread.start()
 thread.join()
-
